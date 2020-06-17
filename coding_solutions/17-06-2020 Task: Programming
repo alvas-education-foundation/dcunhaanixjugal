@@ -1,0 +1,28 @@
+Java program to validate the identifiers using Regular Expression. 
+  
+import java.util.regex.*;   
+class GFG { 
+    public static boolean
+    isValidIdentifier(String identifier) 
+    { 
+         String regex = "^([a-zA-Z_$][a-zA-Z\\d_$]*)$";
+         Pattern p = Pattern.compile(regex); 
+  
+        if (identifier == null) { 
+            return false; 
+        }  
+        Matcher m = p.matcher(identifier); 
+        return m.matches(); 
+    } 
+    public static void main(String args[]) 
+    { 
+        String str1 = "$geeks123"; 
+        System.out.println(isValidIdentifier(str1)); 
+ 
+        String str2 = "$gee ks123"; 
+        System.out.println(isValidIdentifier(str2)); 
+  
+        String str3 = "1geeks$"; 
+        System.out.println(isValidIdentifier(str3)); 
+    } 
+} 
