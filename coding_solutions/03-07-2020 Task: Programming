@@ -1,0 +1,55 @@
+#Python3 code to find nth ugly number
+
+#Ugly numbers are those number whose prime factors are 2, 3 or 5.
+ #From 1 to 15, there are 11 ugly numbers 1, 2, 3, 4, 5, 6, 8, 9, 10, 12, 15.
+ #The numbers 7, 11, 13 are not ugly because they are prime. 
+ #The number 14 is not ugly because in its prime factor the 7 will come.
+
+  
+
+def maxDivide( a, b ): 
+
+    while a % b == 0: 
+
+        a = a / b 
+
+    return a  
+
+  
+ 
+
+def isUgly( no ): 
+
+    no = maxDivide(no, 2) 
+
+    no = maxDivide(no, 3) 
+
+    no = maxDivide(no, 5) 
+
+    return 1 if no == 1 else 0
+
+  
+ 
+
+def getNthUglyNo( n ): 
+
+    i = 1
+
+    count = 1 # ugly number count 
+
+ 
+
+    while n > count: 
+
+        i += 1
+
+        if isUgly(i): 
+
+            count += 1
+
+    return i 
+ 
+
+no = getNthUglyNo(150) 
+
+print("150th ugly no. is ", no) 
