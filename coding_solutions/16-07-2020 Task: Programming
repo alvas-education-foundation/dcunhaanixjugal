@@ -1,0 +1,26 @@
+# C Program To Count Total Number Of Notes in Given Amount
+
+int main() {
+int a[8]={500,100,50,20,10,5,2,1},m,temp,i; 
+printf("Enter the amount:"); 
+scanf("%d",&m); 
+temp=m; 
+for(i=0;i<8;i++) { 
+printf("\n%d notes is:%d",a[i],temp/a[i]); 
+temp=temp%a[i]; 
+} 
+}
+
+
+
+Output
+Enter the amount:3456 
+500 notes is:6 
+100 notes is:4
+50 notes is:1 
+20 notes is:0 
+10 notes is:0 
+5 notes is:1 
+2 notes is:0 
+1 notes is:1
+Press any
